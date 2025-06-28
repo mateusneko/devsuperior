@@ -1,22 +1,24 @@
--- PARTICIPANTES
-INSERT INTO tb_participante (id, nome, email) VALUES (1, 'João Silva', 'joao@email.com');
-INSERT INTO tb_participante (id, nome, email) VALUES (2, 'Maria Souza', 'maria@email.com');
+//Tabela categoria ok
+INSERT INTO tb_categoria (id, descricao) VALUES (1, 'Curso');
+INSERT INTO tb_categoria (id, descricao) VALUES (2, 'Oficina');
 
--- ATIVIDADES
-INSERT INTO tb_atividade (id, nome, descricao, preco) VALUES (1, 'Curso de HTML', 'Curso básico de HTML5', 100.00);
-INSERT INTO tb_atividade (id, nome, descricao, preco) VALUES (2, 'Oficina de Git', 'Aprenda a usar Git e GitHub', 80.00);
+//Tabela tb_atividade ok
+INSERT INTO tb_atividade (id, nome, descricao, preco) VALUES (1, 'Curso de HTML', 'Aprenda HTML de forma prática', 80.0);
+INSERT INTO tb_atividade (id, nome, descricao, preco) VALUES (2, 'Oficina de Github', 'Controle versões de seus projetos', 50.0);
 
--- BLOCOS (usando Instant com formato ISO-8601)
-INSERT INTO tb_bloco (id, dia, horario_inicio, horario_fim, atividade_id)
-VALUES (1, TIMESTAMP WITH TIME ZONE '2025-07-01T00:00:00Z', TIMESTAMP WITH TIME ZONE '2025-07-01T08:00:00Z', TIMESTAMP WITH TIME ZONE '2025-07-01T10:00:00Z', 1);
+//Participantes ok
+INSERT INTO tb_participante (id, nome, email) VALUES (1, 'José Silva', 'jose@gmail.com');
+INSERT INTO tb_participante (id, nome, email) VALUES (2, 'Tiago Faria', 'tiago@gmail.com');
+INSERT INTO tb_participante (id, nome, email) VALUES (3, 'Maria do Rosário', 'maria@gmail.com');
+INSERT INTO tb_participante (id, nome, email) VALUES (4, 'Teresa Silva', 'teresa@gmail.com');
 
-INSERT INTO tb_bloco (id, dia, horario_inicio, horario_fim, atividade_id)
-VALUES (2, TIMESTAMP WITH TIME ZONE '2025-07-02T00:00:00Z', TIMESTAMP WITH TIME ZONE '2025-07-02T08:00:00Z', TIMESTAMP WITH TIME ZONE '2025-07-02T10:00:00Z', 1);
+//Bloco
+INSERT INTO tb_bloco(id, horario_inicio, horario_fim, atividade_id) VALUES (1, TIMESTAMP WITH TIME ZONE '2017-09-25T08:00:00Z', TIMESTAMP WITH TIME ZONE '2017-09-25T11:00:00Z', 1);
+INSERT INTO tb_bloco(id, horario_inicio, horario_fim, atividade_id) VALUES (2, TIMESTAMP WITH TIME ZONE '2017-09-25T14:00:00Z', TIMESTAMP WITH TIME ZONE '2017-09-25T18:00:00Z', 1);
+INSERT INTO tb_bloco(id, horario_inicio, horario_fim, atividade_id) VALUES (3, TIMESTAMP WITH TIME ZONE '2017-09-26T08:00:00Z', TIMESTAMP WITH TIME ZONE '2017-09-26T11:00:00Z', 2);
 
-INSERT INTO tb_bloco (id, dia, horario_inicio, horario_fim, atividade_id)
-VALUES (3, TIMESTAMP WITH TIME ZONE '2025-07-01T00:00:00Z', TIMESTAMP WITH TIME ZONE '2025-07-01T14:00:00Z', TIMESTAMP WITH TIME ZONE '2025-07-01T16:00:00Z', 2);
-
--- RELACIONAMENTO PARTICIPANTE <-> ATIVIDADE
+//Relacionamento participante <-> atividade
 INSERT INTO atividade_participante (atividade_id, participante_id) VALUES (1, 1);
 INSERT INTO atividade_participante (atividade_id, participante_id) VALUES (1, 2);
-INSERT INTO atividade_participante (atividade_id, participante_id) VALUES (2, 2);
+INSERT INTO atividade_participante (atividade_id, participante_id) VALUES (2, 3);
+INSERT INTO atividade_participante (atividade_id, participante_id) VALUES (2, 4);
