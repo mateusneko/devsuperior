@@ -15,7 +15,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    
+    //Permitir que o DB aceite texto maior ao invés de VARCHAR
     @Column(columnDefinition = "TEXT")
     private String description;
     private Double price;
