@@ -2,6 +2,7 @@ package com.devsuperior.dscommerce.dto;
 
 import com.devsuperior.dscommerce.entities.Product;
 
+
 public class ProductDTO {
     private Long id;
     private String name;
@@ -9,9 +10,7 @@ public class ProductDTO {
     private Double price;
     private String imgUrl;
 
-    public ProductDTO(){
-
-    }
+public ProductDTO(){}
 
     public ProductDTO(Long id, String name, String description, Double price, String imgUrl) {
         this.id = id;
