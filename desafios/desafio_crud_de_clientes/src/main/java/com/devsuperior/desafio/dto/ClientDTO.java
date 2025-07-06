@@ -18,8 +18,10 @@ public class ClientDTO {
     private String cpf;
     @Positive(message = "O valor deve ser maior que zero!")
     private Double income;
+
     @PastOrPresent
     private LocalDate birthDate;
+
     private Integer children;
 
     public ClientDTO(){

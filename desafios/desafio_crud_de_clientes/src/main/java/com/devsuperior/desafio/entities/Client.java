@@ -3,6 +3,7 @@ package com.devsuperior.desafio.entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
@@ -21,6 +22,7 @@ public class Client {
     @Size(min = 11, max = 11, message = "O CPF deve conter exatamente 11 dígitos!")
     private String cpf;
 
+    @Positive
     private Double income;
 
     @PastOrPresent
