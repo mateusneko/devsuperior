@@ -19,11 +19,7 @@ public class ClientController {
 @Autowired
     private ClientService service;
 
-    @GetMapping(value = "/home")
-    public String home() {
-        return "API do Desafio rodando!";
-    }
-@GetMapping(value = "/{id}")
+   @GetMapping(value = "/{id}")
     public ResponseEntity<ClientDTO> findById(@PathVariable Long id){
     ClientDTO dto = service.findById(id);
     return ResponseEntity.ok(dto);

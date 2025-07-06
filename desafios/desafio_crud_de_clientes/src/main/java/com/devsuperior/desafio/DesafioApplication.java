@@ -1,5 +1,6 @@
 package com.devsuperior.desafio;
 
+import com.devsuperior.desafio.controllers.ClientController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
