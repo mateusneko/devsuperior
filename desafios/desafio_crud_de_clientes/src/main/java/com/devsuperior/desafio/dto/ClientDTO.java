@@ -1,5 +1,6 @@
 package com.devsuperior.desafio.dto;
 
+
 import com.devsuperior.desafio.entities.Client;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.PastOrPresent;
@@ -8,7 +9,7 @@ import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 
-public class UserDTO {
+public class ClientDTO {
     private Long id;
     @NotBlank(message = "Digite um nome!")
     @Size(min = 3, max = 100, message = "O nome precisa conter entre 3 e 100 caracteres!")
@@ -21,7 +22,7 @@ public class UserDTO {
     private LocalDate birthDate;
     private Integer children;
 
-    public UserDTO(Long id, String name, String cpf, Double income, LocalDate birthDate, Integer children) {
+    public ClientDTO(Long id, String name, String cpf, Double income, LocalDate birthDate, Integer children) {
         this.id = id;
         this.name = name;
         this.cpf = cpf;
@@ -30,7 +31,7 @@ public class UserDTO {
         this.children = children;
     }
 
-    public UserDTO(Client client){
+    public ClientDTO(Client client){
         this.id = client.getId();
         this.name = client.getName();
         this.cpf = client.getCpf();
