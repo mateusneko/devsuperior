@@ -13,15 +13,19 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @NotBlank(message = "Digite um nome!")
     @Size(min = 3, max = 100, message = "O nome precisa conter entre 3 e 100 caracteres!")
     private String name;
 
     @Size(min = 11, max = 11, message = "O CPF deve conter exatamente 11 dígitos!")
     private String cpf;
+
     private Double income;
+
     @PastOrPresent
     private LocalDate birthDate;
+
     private Integer children;
 
     public Client() {
@@ -44,19 +48,19 @@ public class Client {
         this.id = id;
     }
 
-    public @NotBlank(message = "Digite um nome!") @Size(min = 3, max = 100, message = "O nome precisa conter entre 3 e 100 caracteres!") String getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(@NotBlank(message = "Digite um nome!") @Size(min = 3, max = 100, message = "O nome precisa conter entre 3 e 100 caracteres!") String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public @Size(min = 11, max = 11, message = "O CPF deve conter exatamente 11 dígitos!") String getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(@Size(min = 11, max = 11, message = "O CPF deve conter exatamente 11 dígitos!") String cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -68,11 +72,11 @@ public class Client {
         this.income = income;
     }
 
-    public @PastOrPresent LocalDate getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(@PastOrPresent LocalDate birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
